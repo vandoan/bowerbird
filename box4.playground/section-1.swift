@@ -31,3 +31,39 @@ for month in months {
     
 }
 
+
+
+
+for card in cards {
+    switch card {
+    case 1...3:
+        println("weeni cards")
+    case 11:
+        println("Jack")
+    case 13:
+        println("King")
+    default:
+        println(card)
+    }
+}
+
+
+var distance = 22
+
+if distance < 5 {
+    println("\(distance) miles is near")
+} else if distance >= 5  && distance <= 20 {
+    println("\(distance) mile is close")
+} else {
+    println("\(distance) miles is far")
+}
+
+
+
+
+
+
+
+
+
+
