@@ -18,4 +18,17 @@ struct Contact {
 }
 
 
-var person = Contact(fName: "Jon", lName: "Smith")  
+var person = Contact(fName: "Jon", lName: "Smith")
+
+
+
+
+
+struct Expense {
+    var description: String
+    var amount: Double = 0.0
+    
+    init(description:String) {
+        self.description = "description"
+    }
+}
