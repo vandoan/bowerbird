@@ -26,15 +26,23 @@ enum Size {
 
 class Clothing: Product {
     var size = Size()
+    let designer: String
+    
+    init (title: String, price: Double, designer: String) {
+        self.designer = designer
+        // super.init overrides the previous init; can only be called only after the custom init
+        super.init(title: title, price: price)
+    }
+    
     // the underscore gives the function a default value
     override func discountedPrice(_ percentage: Double = 10) -> Double {
-//        return  price - (price * percentage / 100)
+        //        return  price - (price * percentage / 100)
         return super.discountedPrice(percentage)
     }
 }
 
 
-var tshirt = Clothing(title: "Vintage", price: 49.99)
+var tshirt = Clothing(title: "Vintage", price: 49.99, designer: "Prada")
 tshirt.title
 tshirt.price
 //tshirt.discountedPrice(10)
@@ -43,6 +51,8 @@ tshirt.discountedPrice()
 tshirt.size
 
 let quadcopter = Product(title: "Quadcopter", price: 499.99)
+
+
 
 
 
@@ -57,7 +67,7 @@ class Button {
         self.height = height
     }
     
-    func incrementBy(points: Double){
+    func scaleBy(points: Double){
         width += points
         height += points
     }
@@ -66,6 +76,9 @@ class Button {
 class RoundButton: Button {
     var cornerRadius: Double = 5.0
     
-    override func incrementBy(_ points: Double = 7.0){
-    }
+    init(width: Double, height: Double, cornerRadius: Double){
+        self.cornerRadius = cornerRadius
+        
+        super.init(width: width, height: height)
+    }  
 }
