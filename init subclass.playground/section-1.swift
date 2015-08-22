@@ -34,6 +34,11 @@ class Clothing: Product {
         super.init(title: title, price: price)
     }
     
+    
+    convenience init (title: String) {
+        self.init(title: title, price: 99, designer: "Calvin Dlein")
+    }
+    
     // the underscore gives the function a default value
     override func discountedPrice(_ percentage: Double = 10) -> Double {
         //        return  price - (price * percentage / 100)
@@ -42,7 +47,7 @@ class Clothing: Product {
 }
 
 
-var tshirt = Clothing(title: "Vintage", price: 49.99, designer: "Prada")
+var tshirt = Clothing(title: "Vintage")
 tshirt.title
 tshirt.price
 //tshirt.discountedPrice(10)
