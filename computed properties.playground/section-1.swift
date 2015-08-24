@@ -43,3 +43,12 @@ let table = Furniture(title: "Coffee Table", price: 300, height: 5, width: 10, l
 
 table.surfaceArea
 
+
+
+class Temperature {
+    var celsius: Float = 0.0
+    
+    var fahrenheit : Float {
+        return  celsius * 1.8 + 32
+    }
+}
